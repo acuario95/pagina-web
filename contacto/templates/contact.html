@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<!-- Deja este bloque vacío para ocultar el header -->
+{% endblock %}
+
+{% block content %}
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="form-wrapper">
+            <h2 class="contact-title">Contactame</h2>
+            <form action="{% url 'paginaContacto' %}" method="post" class="contact-form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono (opcional):</label>
+                    <input type="tel" id="telefono" name="telefono" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" class="form-control" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>¿Cómo te gustaría que te contactáramos?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="email_contacto" name="contacto" value="email" checked>
+                        <label for="email_contacto">Correo electrónico</label>
+                        <input type="radio" id="telefono_contacto" name="contacto" value="telefono">
+                        <label for="telefono_contacto">Teléfono</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

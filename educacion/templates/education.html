@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header %}
+<!-- No contenido aquí -->
+{% endblock %}
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+<section id="educacion" class="card-section">
+    <ul class="education-list">
+        {% for education in education_list %}
+        <li class="education-card">
+            <strong>{{ education.estudios }}:</strong>
+            {{ education.institucion }}<br>
+            {{ education.lugar }}
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}
+

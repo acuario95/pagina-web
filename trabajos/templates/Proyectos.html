@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<!-- Deja este bloque vacío para ocultar el header -->
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        {% for proyecto in proyectos %}
+        <div class="col-md-2 mb-5">
+            <div class="d-flex flex-column align-items-center">
+                <!-- Imagen del proyecto -->
+                <img src="{{ proyecto.foto.url }}" alt="Imagen de {{ proyecto.titulo }}" class="img-fluid" style="width: 100%; height: auto; object-fit: cover;">
+
+                <!-- Título del proyecto -->
+                <h5 class="text-center mt-2">{{ proyecto.titulo }}</h5>
+                
+                <!-- Descripción del proyecto -->
+                <p class="text-center mt-2">{{ proyecto.descripcion }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+

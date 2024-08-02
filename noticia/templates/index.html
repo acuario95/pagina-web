@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+ 
+{% endblock %}
+
+{% block content %}
+
+<section class="about">
+    <div class="container">
+        <div class="about-me">
+        <img src="{% static 'perfil.jpg' %}" alt="Foto de Cecilia Garate Fatama" class="profile-pic">
+        <div class="info">
+            
+            <p class="justify-text">Hola, soy Cecilia, me considero una persona curiosa y creativa, siempre buscando aprender algo nuevo y mejorar mis habilidades. Me encanta enfrentar desafíos complejos y encontrar soluciones eficientes.</p>
+            <p class="justify-text">Estoy emocionada por las oportunidades futuras y siempre estoy abierta a nuevos proyectos y colaboraciones que me permitan crecer tanto profesional como personalmente.</p>
+            <ul> 
+                <li><strong>Nombre:</strong> Cecilia Romelia Garate Fatama</li>
+                <li><strong>Edad:</strong> 29</li>
+                <li><strong>Ciudad:</strong> Aguaytia, Padre Abad</li>
+                <li><strong>Numero Telefonico</strong> 942-064-178</li>
+                <li><strong>Email:</strong> cgarate29@gmail.com</li>
+            </ul>
+            
+            <a href="static/cv.pdf" class="btn btn-primary" download>Descargar PDF</a>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
